@@ -10,8 +10,6 @@ Your project should have the following requirements met:
 
 You may choose whatever kind of project you like within the ethical guidlines of the university. Commit your propasal to this file and we will discuss your project idea if it needs improvement.
 <h1>Stroud's Auction Service</h1>
-![Image of Logo](/images/logo.png)
-
 
 <p>
 My project will be redoing an idea I had in the past for my cousins auction service. He wants an online front to advertise and share for his auctions. This site will show the upcoming auctions with pictures and information about the sale.
