@@ -1,0 +1,13 @@
+<h2> Upcoming Auctions</h2>
+
+<ul>
+  <li *ngFor="let auction of auctions" (click)="onSelect(auction)">{{auction.date}}</li>
+</ul>
+<div *ngIf="selectedAuction">
+  <!--Auction details: {{selectedAuction.address}} on {{selectedAuction.date}}-->
+  <app-aucdetails [auction]="selectedAuction"></app-aucdetails>
+</div>
+
+<div *ngIf="!selectedAuction">
+  <b><i>No auction selected. Please click a auction date to view details.</i></b>
+</div>
