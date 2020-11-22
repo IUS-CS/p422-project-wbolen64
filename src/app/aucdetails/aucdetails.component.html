@@ -1,32 +1,7 @@
-<p>Auction Company: {{auction.company}}</p>
-<p>Auctioneer: {{auction.auctioneer}}</p>
-<p>Contact #: {{auction.contact}}</p>
-<p>Address: {{auction.address}}</p>
-<p>Time: {{auction.time}}</p>
-<p>Date: {{auction.date}}</p>
+<div>
+  <h1>Auctions</h1>
+  <ul *ngFor="let name of (auctionDates | async)">
+    <li><a [routerLink]="['/auctions', name]">{{name}}</a></li>
+  </ul>
+</div>
 
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">Cars</th>
-    <th scope="col">Collectables</th>
-    <th scope="col">Decor</th>
-    <th scope="col">Glassware</th>
-    <th scope="col">Signage</th>
-    <th scope="col">Firearms</th>
-    <th scope="col">Misc</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let info of auction.items; index as i">
-
-    <td>{{ info.cars}}</td>
-    <td>{{ info.collectables}}</td>
-    <td>{{ info.decor}}</td>
-    <td>{{ info.glass}}</td>
-    <td>{{ info.signage}}</td>
-    <td>{{ info.firearms}}</td>
-    <td>{{ info.misc}}</td>
-  </tr>
-  </tbody>
-</table>
