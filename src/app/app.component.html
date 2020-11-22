@@ -1,15 +1,44 @@
-<div class="container">
-  <div class="row">
-  <h1>{{"Welcome to Strouds Auction Service"}}</h1>
-  </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+  body {font-family: "Open Sans"}
+</style>
 
-  <div class="row">
-    <app-auction-container></app-auction-container>
-  </div>
+<header class="w3-container w3-center w3-padding-48 w3-indigo">
+  <h1 class="w3-xxxlarge"><b>{{"Welcome to Strouds Auction Service"}}</b></h1>
+</header>
 
-  <div class="row">
-    <app-rating-stars></app-rating-stars>
-  </div>
-
+<body>
+<div class="left">
+  <app-sidebar></app-sidebar>
 </div>
+</body>
 
+
+<footer class="w3-padding-64 w3-white w3-small w3-center" id="footer">
+  <div class="w3-row-padding">
+    <div class="w3-col s4">
+      <app-rating-stars></app-rating-stars>
+    </div>
+
+    <div class="w3-col s4">
+      <img src="https://scontent-msp1-1.xx.fbcdn.net/v/t1.0-9/10252105_227832197412393_8630341555930865723_n.jpg?_nc_cat=105&ccb=2&_nc_sid=dd9801&_nc_ohc=ZA4H9DINflEAX8k1njT&_nc_ht=scontent-msp1-1.xx&oh=82616081f8689bdd01bc3a3e0bb98e0e&oe=5FD0C579" width="500" height="250">
+    </div>
+
+
+    <div class="w3-col s4 w3-justify">
+      <p><i class="fa fa-fw fa-map-marker"></i> Stroud's Auction Service</p>
+      <p><i class="fa fa-fw fa-phone"></i> 812-267-1122</p>
+      <p><i class="fa fa-fw fa-envelope"></i> stroud@mail.com</p>
+      <h4>We accept</h4>
+      <p><i class="fa fa-fw fa-money"></i> Cash</p>
+      <p><i class="fa fa-fw fa-credit-card"></i> Check</p>
+      <br>
+    </div>
+  </div>
+</footer>
