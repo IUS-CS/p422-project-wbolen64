@@ -12,6 +12,6 @@ export const AUCTIONS: Auction[] =[
       decor: 'Basic Home Shit', glass: 'none', signage: 'Coke Signs', firearms: 'Remington 870 Wingmaster', misc: 'Much More'}]},
   { company: 'STROUDS AUCTION SERVICE LLC', auctioneer: 'Eric Stroud', contact: '8129722499',
     address: 'Floyd Co Impound', time: '10am', date: '2-6-21', items: [{cars: '2005 Ford FiveHundred', collectables: 'Beanie Babies',
-      decor: 'eh', glass: 'Glassware for youngins', signage: 'Neon signs', firearms: 'Tommy Gun', misc: 'much more'}]},
+      decor: 'ArtDeco', glass: 'Glassware for youngins', signage: 'Neon signs', firearms: 'Tommy Gun', misc: 'much more'}]},
 ];
 
