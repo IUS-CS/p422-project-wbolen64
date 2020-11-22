@@ -1,0 +1,30 @@
+<div class="d-flex">
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+    <li ngbNavItem="top">
+      <a class="nav-link" routerLink="/homepage" routerLinkActive="active">Home</a>
+      <ng-template ngbNavContent>
+        <router-outlet></router-outlet>
+      </ng-template>
+    </li>
+    <li ngbNavItem="upcomingauctions">
+      <a class="nav-link" routerLink="/auctions" routerLinkActive="active">Upcoming Auctions</a>
+      <ng-template ngbNavContent>
+        <router-outlet></router-outlet>
+      </ng-template>
+    </li>
+    <li ngbNavItem="contact">
+      <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+      <ng-template ngbNavContent>
+        <router-outlet></router-outlet>
+      </ng-template>
+    </li>
+    <li ngbNavItem="about">
+      <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
+      <ng-template ngbNavContent>
+        <router-outlet></router-outlet>
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="ml-4"></div>
+</div>
