@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Auction} from '../models/Auction';
-import {AUCTIONS} from '../data/auctions';
-
+import { Component, OnInit } from '@angular/core';
+import {AuctionDataService} from '../auction-data.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-aucdetails',
@@ -9,10 +8,15 @@ import {AUCTIONS} from '../data/auctions';
   styleUrls: ['./aucdetails.component.css']
 })
 export class AucdetailsComponent implements OnInit {
-  @Input() auction: Auction;
-  constructor() { }
+
+  auctionDates: Observable<string[]>;
+
+  constructor(
+    private auctionDataService: AuctionDataService
+  ) { }
 
   ngOnInit(): void {
+    this.auctionDates = this.auctionDataService.getAuctionDate();
   }
 
 }
