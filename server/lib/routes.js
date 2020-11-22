@@ -1,0 +1,12 @@
+const express = require('express');
+const auctions = require('./controllers/auctions');
+
+
+let routes = express.Router();
+
+routes.get('/auctions', auctions.root);
+
+routes.route('/auctions/:date')
+  .get(auctions.byAuction)
+
+module.exports = routes;
