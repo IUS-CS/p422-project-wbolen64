@@ -1,13 +1,55 @@
 <h2> Upcoming Auctions</h2>
 
-<ul>
-  <li *ngFor="let auction of auctions" (click)="onSelect(auction)">{{auction.date}}</li>
-</ul>
+<div *ngIf="!selectedAuction">
+  No auction selected!
+</div>
 <div *ngIf="selectedAuction">
-  <!--Auction details: {{selectedAuction.address}} on {{selectedAuction.date}}-->
-  <app-aucdetails [auction]="selectedAuction"></app-aucdetails>
+  <h3>{{( selectedAuction | async)?.date}} @ {{( selectedAuction | async)?.address}}</h3>
+
+  <div><span class="inline-title">Company:</span> {{( selectedAuction | async)?.company}}</div>
+  <div><span class="inline-title">Auctioneer:</span> {{( selectedAuction | async)?.auctioneer}}</div>
+  <div><span class="inline-title">Contact:</span> {{( selectedAuction | async)?.contact}}</div>
+  <div><span class="inline-title">Time:</span> {{( selectedAuction | async)?.time}}</div>
+
+  <div class="title">Key Items</div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Cars</th>
+      <th scope="col">Collectables</th>
+      <th scope="col">Decor</th>
+      <th scope="col">Glassware</th>
+      <th scope="col">Signage</th>
+      <th scope="col">Firearms</th>
+      <th scope="col">Misc</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let info of ( selectedAuction | async)?.items; index as i">
+
+      <td>{{ info.cars}}</td>
+      <td>{{ info.collectables}}</td>
+      <td>{{ info.decor}}</td>
+      <td>{{ info.glass}}</td>
+      <td>{{ info.signage}}</td>
+      <td>{{ info.firearms}}</td>
+      <td>{{ info.misc}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 
-<div *ngIf="!selectedAuction">
-  <b><i>No auction selected. Please click a auction date to view details.</i></b>
-</div>
+
+<!--
+  <ul>
+    <li *ngFor="let auction of auctions" (click)="onSelect(auction)">{{auction.date}}</li>
+  </ul>
+  <div *ngIf="selectedAuction">
+    <app-aucdetails [auction]="selectedAuction"></app-aucdetails>
+  </div>
+
+  <div *ngIf="!selectedAuction">
+    <b><i>No auction selected. Please click a auction date to view details.</i></b>
+  </div>
+
+-->
