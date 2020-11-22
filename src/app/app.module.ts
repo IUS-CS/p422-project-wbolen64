@@ -7,20 +7,35 @@ import { AucdetailsComponent } from './aucdetails/aucdetails.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import { RatingStarsComponent } from './rating-stars/rating-stars.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuctionContainerComponent,
     AucdetailsComponent,
-    RatingStarsComponent
+    RatingStarsComponent,
+    SidebarComponent,
+    HomepageComponent,
+    ContactUsComponent,
+    AboutUsComponent,
+    PageNotFoundComponent
   ],
     imports: [
-        BrowserModule,
-        NgbModule,
-        FormsModule
+      BrowserModule,
+      NgbModule,
+      FormsModule,
+      AppRoutingModule,
+      HttpClientModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
