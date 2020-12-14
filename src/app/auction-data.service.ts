@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Items} from './models/Items';
 
+
 export class Auction{
   company: string;
   auctioneer: string;
@@ -21,7 +22,7 @@ export class AuctionDataService {
   ) {
   }
 
-  private url = '/v1/auctions';
+  private url = '/v1/auctions/';
 
   public getAuction(date: string): Observable<Auction> {
     return this.http.get<Auction>(`${this.url}/${date}`);
