@@ -9,28 +9,28 @@ module.exports = {
         return;
       }
       let ret = [];
-      for (let da of auctions) {
-        ret.push(da.section);
+      for (let klass of auctions) {
+        ret.push(klass.date);
       }
       res.json(ret);
     })
   },
   byAuction: (req, res) => {
-    const date = req.params.date;
+    const section = req.params.date;
 
-    Auction.findOne().bySection(date).exec((err, da) => {
+    Auction.findOne().bySection(section).exec((err, klass) => {
       if (err) {
         res.status(500);
         res.json(err);
         return;
       }
-      if (!da) {
+      if (!klass) {
         res.status(404);
         res.json({'err': 'auction not found'});
         return;
       }
-      console.log('sending auction: ' + da)
-      res.json(da);
+      console.log('sending auction: ' + klass)
+      res.json(klass);
     })
   }
 }
