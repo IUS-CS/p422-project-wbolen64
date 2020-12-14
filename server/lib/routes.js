@@ -4,7 +4,8 @@ const auctions = require('./controllers/auctions');
 
 let routes = express.Router();
 
-routes.get('/auctions', auctions.root);
+routes.route('/auctions')
+  .get(auctions.root)
 
 routes.route('/auctions/:date')
   .get(auctions.byAuction)
