@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  images = [1072, 284, 206].map((n) => `https://picsum.photos/id/${n}/200/300`)
   constructor() { }
 
   ngOnInit(): void {
