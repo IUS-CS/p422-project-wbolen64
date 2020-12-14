@@ -1,8 +1,25 @@
+<head>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
 <h2> Upcoming Auctions</h2>
 
-<div *ngIf="!selectedAuction">
-  No auction selected!
-</div>
 <div *ngIf="selectedAuction">
   <h3>{{( selectedAuction | async)?.date}} @ {{( selectedAuction | async)?.address}}</h3>
 
@@ -13,6 +30,15 @@
 
   <div class="title">Key Items</div>
   <table class="table table-striped">
+    <tr *ngFor="let day of (selectedAuction | async)?.items">
+      <td>{{day}}</td>
+    </tr>
+  </table>
+</div>
+</body>
+
+<!--
+    <table class="table table-striped">
     <thead>
     <tr>
       <th scope="col">Cars</th>
@@ -25,31 +51,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let info of ( selectedAuction | async)?.items; index as i">
-
-      <td>{{ info.cars}}</td>
-      <td>{{ info.collectables}}</td>
-      <td>{{ info.decor}}</td>
-      <td>{{ info.glass}}</td>
-      <td>{{ info.signage}}</td>
-      <td>{{ info.firearms}}</td>
-      <td>{{ info.misc}}</td>
-    </tr>
+    <tr *ngFor="let day of (selectedAuction | async)?.items">
+        <td>{{day}}</td>
+      </tr>
     </tbody>
   </table>
-</div>
-
-
-<!--
-  <ul>
-    <li *ngFor="let auction of auctions" (click)="onSelect(auction)">{{auction.date}}</li>
-  </ul>
-  <div *ngIf="selectedAuction">
-    <app-aucdetails [auction]="selectedAuction"></app-aucdetails>
-  </div>
-
-  <div *ngIf="!selectedAuction">
-    <b><i>No auction selected. Please click a auction date to view details.</i></b>
-  </div>
-
 -->
