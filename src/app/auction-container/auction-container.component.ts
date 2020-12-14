@@ -22,12 +22,12 @@ export class AuctionContainerComponent implements OnInit {
   ngOnInit(): void {
     this.selectedAuction = this.route.paramMap.pipe(
       switchMap((params: ParamMap): Observable<Auction> => {
-        return this.auctionDataService.getAuction(params.get('class'));
+        return this.auctionDataService.getAuction(params.get('date'));
       })
     );
   }
 
-  public selectCourse(name: string): void {
+  public selectAuction(name: string): void {
     this.selectedAuction = this.auctionDataService.getAuction(name);
     if (!this.selectedAuction) {
       this.router.navigateByUrl('/notfound');
